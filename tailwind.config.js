@@ -7,6 +7,8 @@ export default {
         './storage/framework/views/*.php',
         './resources/**/*.blade.php',
         './resources/**/*.js',
+        'node_modules/preline/dist/*.js',
+        './node_modules/flowbite/**/*.js'
     ],
     theme: {
         extend: {
@@ -15,5 +17,15 @@ export default {
             },
         },
     },
-    plugins: [],
+    corePlugins: {
+        aspectRatio: false,
+    },
+    plugins: [
+        require('preline/plugin'),
+        require('@tailwindcss/typography'),
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/aspect-ratio'),
+        require('@tailwindcss/container-queries'),
+        require('flowbite/plugin')
+    ],
 };
